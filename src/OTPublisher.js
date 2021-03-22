@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import once from 'lodash/once';
-import { omitBy, isNil } from 'lodash/fp';
+import omitBy from 'lodash/fp/omitBy';
+import isNil from 'lodash/fp/isNil';
 import uuid from 'uuid';
 
 export default class OTPublisher extends Component {
