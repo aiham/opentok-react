@@ -91,6 +91,7 @@ export default class OTSubscriber extends Component {
         );
 
     if (
+            subscriber &&
             this.props.eventHandlers &&
             typeof this.props.eventHandlers === 'object'
         ) {
