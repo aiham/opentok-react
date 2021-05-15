@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import getDisplayName from 'react-display-name';
-import scriptjs from 'scriptjs';
+import load from 'little-loader';
 
 const DEFAULT_SCRIPT_URL = 'https://static.opentok.com/v2/js/opentok.min.js';
 
@@ -31,7 +31,7 @@ export default function preloadScript(InnerComponent) {
       this.scriptLoading = true;
 
       const scriptUrl = this.props.opentokClientUrl;
-      scriptjs(scriptUrl, this.onScriptLoad);
+      load(scriptUrl, this.onScriptLoad);
     }
 
     componentWillUnmount() {
