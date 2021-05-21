@@ -54,6 +54,7 @@ export interface CreateSessionOptions {
   sessionId: string;
   token: string;
   onStreamsUpdated?: (streams: Stream[]) => void;
+  onError?: (error: Error) => void;
 }
 
 export interface SessionHelper {
