@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { validate as uuidValidate, version as uuidVersion } from 'uuid';
 import OTSubscriber from '../src/OTSubscriber';
 
 describe('OTSubscriber', () => {
@@ -127,6 +128,12 @@ describe('OTSubscriber', () => {
     it('should have a subscriber', () => {
       expect(wrapper.instance().getSubscriber()).toBe(subscriber);
       expect(wrapper.state('subscriber')).toBe(subscriber);
+    });
+
+    it('should have a valid subscriberId', () => {
+      const { subscriberId } = wrapper.instance();
+      expect(uuidValidate(subscriberId)).toBe(true);
+      expect(uuidVersion(subscriberId)).toEqual(4);
     });
 
     it('should unsubscribe when unmounting', () => {

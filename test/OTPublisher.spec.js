@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { validate as uuidValidate, version as uuidVersion } from 'uuid';
 import OTPublisher from '../src/OTPublisher';
 
 describe('OTPublisher', () => {
@@ -135,6 +136,12 @@ describe('OTPublisher', () => {
           'sessionConnected',
           jasmine.any(Function),
         );
+      });
+
+      it('should have a valid publisherId', () => {
+        const { publisherId } = wrapper.instance();
+        expect(uuidValidate(publisherId)).toBe(true);
+        expect(uuidVersion(publisherId)).toEqual(4);
       });
     });
 

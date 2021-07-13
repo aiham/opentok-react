@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export default class OTSubscriber extends Component {
   constructor(props, context) {

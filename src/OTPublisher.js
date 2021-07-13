@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import once from 'lodash/once';
 import { omitBy, isNil } from 'lodash/fp';
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export default class OTPublisher extends Component {
   constructor(props, context) {
